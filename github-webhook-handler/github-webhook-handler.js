@@ -4,6 +4,7 @@ const bl = require("bl")
 
 function findHandler(url, arr) {
   console.log("findHandler start")
+  console.log(arr)
   if (!Array.isArray(arr)) {
     return arr
   }

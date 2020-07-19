@@ -8,10 +8,9 @@ const handler = createHandler({
 
 http
   .createServer(function (req, res) {
-    console.log({ req, res })
     handler(req, res, function (err) {
       res.statusCode = 404
-      res.end("happy to codeaaa")
+      res.end("happy to code")
     })
   })
   .listen(14110)

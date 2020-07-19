@@ -1,3 +1,4 @@
+#!usr/bin/env node
 const EventEmitter = require("events")
 const crypto = require("crypto")
 const bl = require("bl")

@@ -1,3 +1,4 @@
+#!usr/bin/env node
 const http = require("http")
 const createHandler = require("./github-webhook-handler")
 
@@ -22,6 +23,7 @@ handler.on("error", function (err) {
 
 handler.on("push", function (event) {
   console.log({ event })
+  push(event.payload)
 })
 
 console.log("listening: 14110")

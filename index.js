@@ -1,7 +1,10 @@
 const http = require("http")
 const createHandler = require("github-webhook-handler")
 
-const handler = createHandler({ path: "/", secret: "" })
+const handler = createHandler({
+  path: "/",
+  secret: "7d96de0933a279d9986a8822955f65d1",
+})
 
 http
   .createServer(function (req, res) {

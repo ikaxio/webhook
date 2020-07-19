@@ -13,7 +13,7 @@ http
   .createServer(function (req, res) {
     handler(req, res, function (err) {
       res.statusCode = 404
-      res.end("server is ok, happy to code!!!")
+      res.end("server is ok, happy to code!")
     })
   })
   .listen(14110)

@@ -20,6 +20,6 @@ handler.on("error", function (err) {
 })
 
 handler.on("push", function (event) {
-  console.log("push success")
+  console.log(event)
 })
 console.log("listen: 14110")

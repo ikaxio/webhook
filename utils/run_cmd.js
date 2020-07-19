@@ -8,7 +8,7 @@ const run_cmd = function (cmd, args, cb) {
 
   child.stdout.on("data", (buf) => (res += buf.toString()))
   child.stdout.on("end", function () {
-    cb(res)
+    cb && cb(res)
   })
 }
 

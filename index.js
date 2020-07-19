@@ -5,7 +5,7 @@ const push = require("./events/push")
 
 const handler = createHandler({
   path: "/",
-  secret: process.env.GIT_WEBHOOK_SECRET,
+  secret: String(process.env.GIT_WEBHOOK_SECRET),
   events: "push",
 })
 

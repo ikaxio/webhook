@@ -1,5 +1,5 @@
 {
-  "name": "webhook",
+  "name": "xio/webhook",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikaxio/webhook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ikaxio/webhook/issues"
+  },
+  "homepage": "https://github.com/ikaxio/webhook#readme",
+  "dependencies": {
+    "github-webhook-handler": "^1.0.0"
+  }
 }

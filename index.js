@@ -24,3 +24,4 @@ handler.on("push", function (event) {
     event.payload.ref
   )
 })
+console.log("listen: 14110")

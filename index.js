@@ -2,7 +2,7 @@
 const http = require("http")
 const createHandler = require("./github-webhook-handler")
 const push = require("./events/push")
-
+console.log(String(process.env.GIT_WEBHOOK_SECRET))
 const handler = createHandler({
   path: "/",
   secret: String(process.env.GIT_WEBHOOK_SECRET),
@@ -13,7 +13,7 @@ http
   .createServer(function (req, res) {
     handler(req, res, function (err) {
       res.statusCode = 404
-      res.end("server started, happy to code!!")
+      res.end("server started, happy to code!!!")
     })
   })
   .listen(14110)

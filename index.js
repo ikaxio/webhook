@@ -1,6 +1,7 @@
 #!usr/bin/env node
 const http = require("http")
 const createHandler = require("./github-webhook-handler")
+const push = require("./events/push")
 
 const handler = createHandler({
   path: "/",

@@ -11,4 +11,11 @@ git checkout .
 echo "pull finished"
 echo "npm ci"
 npm ci
+echo "restart"
+PORT=14110
+pid=$(netstat -nlp | grep :PORT | awk '{print $7}' | awk -F"/" '{ print $1 }');
+if [  -n  "$pid"  ];  then
+    kill  -9  $pid;
+fi
+node index.js
 echo "end"

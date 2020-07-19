@@ -17,7 +17,5 @@
     "url": "https://github.com/ikaxio/webhook/issues"
   },
   "homepage": "https://github.com/ikaxio/webhook#readme",
-  "dependencies": {
-    "github-webhook-handler": "^1.0.0"
-  }
+  "dependencies": {}
 }

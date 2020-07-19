@@ -4,7 +4,7 @@ WEB_ROOT='/data/workspace/webhook'
 echo 'start'
 cd $WEB_ROOT
 echo "pulling source code"
-git reset --hard origin/master
+git reset --hard head
 git clean -f
 git pull
 git checkout .

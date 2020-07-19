@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 const process = require("child_process")
 
 const run_cmd = function (cmd, args, cb) {

@@ -1,4 +1,4 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 const cmd = require("../utils/run_cmd")
 
 const branch = "refs/heads/develop"

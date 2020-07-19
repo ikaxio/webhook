@@ -133,8 +133,8 @@ function create(initOptions) {
 
         try {
           let dataString = data.toString()
-          dataString.replace("payload=", "")
           dataString = decodeURIComponent(dataString)
+          dataString.replace("payload=", "")
           console.log({ dataString })
           // obj = JSON.parse(data.toString())
         } catch (e) {

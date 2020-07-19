@@ -8,7 +8,7 @@ function findHandler(url, arr) {
   if (!Array.isArray(arr)) {
     return arr
   }
-
+  console.log(url)
   let ret = arr[0]
   for (let i = 0; i < arr.length; i++) {
     if (url === arr[i].path) {

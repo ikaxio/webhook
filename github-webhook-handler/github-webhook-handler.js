@@ -132,14 +132,7 @@ function create(initOptions) {
         }
 
         try {
-          console.log({ data })
-          let bb = new Blob([data])
-          let reader = new FileReader()
-          reader.onload = function (event) {
-            var content = reader.result
-            console.log(content)
-          }
-          reader.readAsText(bb)
+          console.log({ data: data.toString() })
           // obj = JSON.parse(data.toString())
         } catch (e) {
           return hasError(e)

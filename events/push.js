@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const path = require("path")
 const cmd = require("../utils/run_cmd")
 
 const branch = "refs/heads/master"
@@ -8,8 +9,8 @@ const push = (payload) => {
   if (!ref) return
   console.log("deploy start")
   if (branch === ref) {
-    cmd("sh", ["./deploy_dev.sh"])
+    cmd("sh", [path.resolve(__dirname, "../utils/shell/deploy_dev.sh")])
   }
 }
-cmd("sh", ["./deploy_dev.sh"])
+cmd("sh", [path.resolve(__dirname, "../utils/shell/deploy_dev.sh")])
 module.exports = push

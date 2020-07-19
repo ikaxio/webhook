@@ -1,16 +1,14 @@
-var http = require("http")
+const http = require("http")
 const createHandler = require("github-webhook-handler")
 
-const handler = createHandler({
-  path: "/",
-  secret: "7d96de0933a279d9986a8822955f65d1",
-})
+const handler = createHandler({ path: "/", secret: "" })
 
 http
   .createServer(function (req, res) {
+    console.log({ req, res })
     handler(req, res, function (err) {
       res.statusCode = 404
-      res.end("hello, happy to code")
+      res.end("happy to codeaa")
     })
   })
   .listen(14110)
@@ -26,5 +24,3 @@ handler.on("push", function (event) {
     event.payload.ref
   )
 })
-
-console.log("listen: 14110")

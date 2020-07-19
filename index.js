@@ -2,10 +2,10 @@
 const http = require("http")
 const createHandler = require("./github-webhook-handler")
 const push = require("./events/push")
-console.log(String(process.env.GIT_WEBHOOK_SECRET))
+
 const handler = createHandler({
   path: "/",
-  secret: String(process.env.GIT_WEBHOOK_SECRET),
+  secret: "7d96de0933a279d9986a8822955f65d1",
   events: "push",
 })
 

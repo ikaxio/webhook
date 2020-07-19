@@ -8,6 +8,7 @@ const push = (payload) => {
   if (!ref) return
 
   if (branch === ref) {
+    console.log({ ref })
     cmd("sh", ["./deploy_dev.sh"])
   }
 }

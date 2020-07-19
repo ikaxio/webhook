@@ -12,5 +12,5 @@ echo "pull finished"
 echo "npm ci"
 npm ci
 echo "restart"
-pm2 restart index
+pm2 restart webhook
 echo "end"

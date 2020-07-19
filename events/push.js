@@ -1,5 +1,5 @@
 #!usr/bin/env node
-import cmd from "../utils/run_cmd"
+const cmd = require("../utils/run_cmd")
 
 const branch = "refs/heads/develop"
 
@@ -12,4 +12,4 @@ const push = (payload) => {
   }
 }
 
-export default push
+module.exports = push

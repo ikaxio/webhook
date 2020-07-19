@@ -1,7 +1,7 @@
 #!usr/bin/env node
 const process = require("child_process")
 
-export default function (cmd, args, cb) {
+const run_cmd = function (cmd, args, cb) {
   const spawn = process.spawn
   const child = spawn(cmd, args)
   const res = ""
@@ -11,3 +11,5 @@ export default function (cmd, args, cb) {
     cb(res)
   })
 }
+
+module.exports = run_cmd

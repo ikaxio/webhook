@@ -121,7 +121,6 @@ function create(initOptions) {
     req.pipe(
       bl((err, data) => {
         console.log("bl start")
-        console.log({ eeeeeeee: err.message })
         if (err) {
           return hasError(err.message)
         }
@@ -133,7 +132,8 @@ function create(initOptions) {
         }
 
         try {
-          obj = JSON.parse(data.toString())
+          console.log({ data })
+          // obj = JSON.parse(data.toString())
         } catch (e) {
           return hasError(e)
         }

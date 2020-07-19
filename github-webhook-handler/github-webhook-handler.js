@@ -90,6 +90,7 @@ function create(initOptions) {
 
     function hasError(msg) {
       res.writeHead(400, { "content-type": "application/json" })
+      console.log({ hasError: msg })
       res.end(JSON.stringify({ error: msg }))
 
       const err = new Error(msg)
@@ -117,9 +118,10 @@ function create(initOptions) {
     if (events && events.indexOf(event) === -1) {
       return hasError("X-Github-Event is not acceptable")
     }
-
+    console.log("pipe start")
     req.pipe(
       bl((err, data) => {
+        console.log("bl start")
         if (err) {
           return hasError(err.message)
         }
@@ -148,12 +150,12 @@ function create(initOptions) {
           url: req.url,
           path: options.path,
         }
-
+        console.log("bl end", { emitData })
         handler.emit(event, emitData)
         handler.emit("*", emitData)
       })
     )
-
+    console.log("pipe end")
     console.log("handler end")
   }
 }

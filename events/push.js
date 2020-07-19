@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const cmd = require("../utils/run_cmd")
 
-const branch = "refs/heads/develop"
+const branch = "refs/heads/master"
 
 const push = (payload) => {
   const ref = payload.ref

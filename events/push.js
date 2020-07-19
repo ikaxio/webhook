@@ -5,6 +5,7 @@ const branch = "refs/heads/develop"
 
 const push = (payload) => {
   const ref = payload.ref
+  console.log({ payload, ref })
   if (!ref) return
 
   if (branch === ref) {

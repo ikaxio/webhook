@@ -17,5 +17,7 @@
     "url": "https://github.com/ikaxio/webhook/issues"
   },
   "homepage": "https://github.com/ikaxio/webhook#readme",
-  "dependencies": {}
+  "dependencies": {
+    "bl": "^4.0.2"
+  }
 }

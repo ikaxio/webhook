@@ -4,6 +4,7 @@ const createHandler = require("./github-webhook-handler")
 const handler = createHandler({
   path: "/",
   secret: "7d96de0933a279d9986a8822955f65d1",
+  events: "push",
 })
 
 http
@@ -20,6 +21,7 @@ handler.on("error", function (err) {
 })
 
 handler.on("push", function (event) {
-  console.log(event)
+  console.log({ event })
 })
-console.log("listen: 14110")
+
+console.log("listening: 14110")

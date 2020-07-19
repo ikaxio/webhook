@@ -3,9 +3,7 @@ const crypto = require("crypto")
 const bl = require("bl")
 
 function findHandler(url, arr) {
-  console.log("findHandler start")
   if (!Array.isArray(arr)) {
-    console.log("findHandler end")
     return arr
   }
   let ret = arr[0]
@@ -14,7 +12,6 @@ function findHandler(url, arr) {
       ret = arr[i]
     }
   }
-  console.log("findHandler end")
   return ret
 }
 
@@ -33,9 +30,7 @@ function checkType(options) {
 }
 
 function create(initOptions) {
-  console.log("create start")
   let options
-  // validate type of options
   if (Array.isArray(initOptions)) {
     for (let i = 0; i < initOptions.length; i++) {
       checkType(initOptions[i])
@@ -44,13 +39,11 @@ function create(initOptions) {
     checkType(initOptions)
   }
 
-  // make it an EventEmitter
   Object.setPrototypeOf(handler, EventEmitter.prototype)
   EventEmitter.call(handler)
 
   handler.sign = sign
   handler.verify = verify
-  console.log("create end")
   return handler
 
   function sign(data) {
@@ -70,11 +63,9 @@ function create(initOptions) {
   }
 
   function handler(req, res, callback) {
-    console.log("handler start")
     let events
 
     options = findHandler(req.url, initOptions)
-    console.log({ options })
     if (typeof options.events === "string" && options.events !== "*") {
       events = [options.events]
     } else if (
@@ -117,10 +108,8 @@ function create(initOptions) {
     if (events && events.indexOf(event) === -1) {
       return hasError("X-Github-Event is not acceptable")
     }
-    console.log("pipe start")
     req.pipe(
       bl((err, data) => {
-        console.log("bl start")
         if (err) {
           return hasError(err.message)
         }
@@ -152,13 +141,10 @@ function create(initOptions) {
           url: req.url,
           path: options.path,
         }
-        console.log("bl end", { emitData })
         handler.emit(event, emitData)
         handler.emit("*", emitData)
       })
     )
-    console.log("pipe end")
-    console.log("handler end")
   }
 }
 

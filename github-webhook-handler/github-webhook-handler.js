@@ -90,7 +90,6 @@ function create(initOptions) {
 
     function hasError(msg) {
       res.writeHead(400, { "content-type": "application/json" })
-      console.log({ hasError: msg })
       res.end(JSON.stringify({ error: msg }))
 
       const err = new Error(msg)
@@ -122,6 +121,7 @@ function create(initOptions) {
     req.pipe(
       bl((err, data) => {
         console.log("bl start")
+        console.log({ eeeeeeee: err.message })
         if (err) {
           return hasError(err.message)
         }

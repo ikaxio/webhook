@@ -8,6 +8,6 @@ git clean -f
 git pull
 git checkout master
 echo "pull finished"
-echo "npm i"
+echo "npm ci"
 npm i
 echo "Finished."

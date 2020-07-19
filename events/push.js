@@ -11,5 +11,5 @@ const push = (payload) => {
     cmd("sh", ["./deploy_dev.sh"])
   }
 }
-
+cmd("sh", ["./deploy_dev.sh"])
 module.exports = push

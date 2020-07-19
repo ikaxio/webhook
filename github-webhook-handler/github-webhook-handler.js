@@ -4,11 +4,10 @@ const bl = require("bl")
 
 function findHandler(url, arr) {
   console.log("findHandler start")
-  console.log(arr)
   if (!Array.isArray(arr)) {
+    console.log("findHandler end")
     return arr
   }
-  console.log(url)
   let ret = arr[0]
   for (let i = 0; i < arr.length; i++) {
     if (url === arr[i].path) {
@@ -75,7 +74,7 @@ function create(initOptions) {
     let events
 
     options = findHandler(req.url, initOptions)
-
+    console.log({ options })
     if (typeof options.events === "string" && options.events !== "*") {
       events = [options.events]
     } else if (

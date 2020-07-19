@@ -12,5 +12,5 @@ const push = (payload) => {
     cmd("sh", [path.resolve(__dirname, "../utils/shell/deploy_dev.sh")])
   }
 }
-cmd("sh", [path.resolve(__dirname, "../utils/shell/deploy_dev.sh")])
+
 module.exports = push

@@ -3,11 +3,11 @@ WEB_ROOT='/data/workspace/webhook'
 
 echo 'start'
 cd $WEB_ROOT
-echo "pulling source code"
 git reset --hard head
 git clean -f
+git checkout develop
+echo "pulling source code"
 git pull
-git checkout .
 echo "pull finished"
 echo "npm ci"
 npm ci

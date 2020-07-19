@@ -1,4 +1,4 @@
-var http = require("http")
+const http = require("http")
 const createHandler = require("github-webhook-handler")
 
 const handler = createHandler({
@@ -10,7 +10,7 @@ http
   .createServer(function (req, res) {
     handler(req, res, function (err) {
       res.statusCode = 404
-      res.end("hello, happy to code!!")
+      res.end("hello, happy to codeaa!!")
     })
   })
   .listen(14110)
